@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-data-binding',
   templateUrl: './data-binding.component.html',
-  //styleUrls: ['./data-binding.component.css']
+  //styleUrls: ['./data-binding.component.css']  
   styles: [
     `
       .highlight {
@@ -24,6 +24,8 @@ export class DataBindingComponent implements OnInit {
 
   isMouseOver: boolean = false;
   nomeDoCurso: string = 'Angular';
+
+  valorInicial: number = 15;
 
   nome: string = "abc";
 
@@ -61,4 +63,7 @@ export class DataBindingComponent implements OnInit {
     this.isMouseOver = !this.isMouseOver;
   }
 
+  onMudouValor(evento) {
+    console.log(evento.novoValor);
+  }
 }
