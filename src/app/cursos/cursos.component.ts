@@ -8,13 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CursosComponent implements OnInit {
 
-  nomePortal: string;
+  nomePortal = 'http://loiane.training';
 
   cursos: string[];
 
-  constructor(private cursosService: CursosService) { 
-    this.nomePortal = 'http://loiane.training'
-
+  constructor(private cursosService: CursosService) {
     this.cursos = cursosService.getCursos();
   }
 

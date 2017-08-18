@@ -6,6 +6,6 @@ export class CursosService {
   constructor() { }
 
   getCursos() {
-    return ["C#", "Ext JS", "Angular"];
+    return ['C#', 'Ext JS', 'Angular'];
   }
 }

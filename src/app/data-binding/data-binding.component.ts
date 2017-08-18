@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-data-binding',
   templateUrl: './data-binding.component.html',
-  //styleUrls: ['./data-binding.component.css']  
+  // styleUrls: ['./data-binding.component.css']
   styles: [
     `
       .highlight {
@@ -15,24 +15,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBindingComponent implements OnInit {
 
-  url: string = "https://loiane.training/";
-  cursoAngular: boolean = true;
-  urlImagem = "http://lorempixel.com/400/200/nature";
+  url = 'https://loiane.training/';
+  cursoAngular = true;
+  urlImagem = 'http://lorempixel.com/400/200/nature';
 
-  valorAtual: string = '';
-  valorSalvo: string = '';
+  valorAtual = '';
+  valorSalvo = '';
 
-  isMouseOver: boolean = false;
-  nomeDoCurso: string = 'Angular';
+  isMouseOver = false;
+  nomeDoCurso = 'Angular';
 
-  valorInicial: number = 15;
+  valorInicial = 15;
 
-  nome: string = "abc";
+  nome = 'abc';
 
   pessoa: any = {
     nome: 'def',
     idade: 19
-  }
+  };
 
   constructor() { }
 
@@ -40,7 +40,7 @@ export class DataBindingComponent implements OnInit {
   }
 
   botaoClicado() {
-    alert("Botão clicado!");
+    alert('Botão clicado!');
   }
 
   onKeyUp(evento: KeyboardEvent) {
@@ -59,7 +59,7 @@ export class DataBindingComponent implements OnInit {
     return true;
   }
 
-  onMouseOverOut(){
+  onMouseOverOut() {
     this.isMouseOver = !this.isMouseOver;
   }
 
