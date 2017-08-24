@@ -1,0 +1,25 @@
+<h5>*ngIf<br/><small>Arvore grande, nao existe se for falso</small></h5>
+
+<div *ngIf="cursos.length > 0">
+    Lista de cursos aqui    
+</div>
+
+<div *ngIf="cursos.length == 0">Não existem cursos para serem listados.</div>
+
+<div *ngIf="mostrarCursos">
+    Lista de cursos aqui    
+</div>
+
+<div *ngIf="!mostrarCursos">Não existem cursos para serem listados.</div>
+<br />
+
+<button (click)="onMostrarCursos()"></button>
+
+<br />
+
+<h5>Hidden como alternativa<br/><small>Arvore de elementos pequenos. Esconde na tela, mas aparece no DOm</small></h5>
+<div [hidden]="!mostrarCursos">
+    Lista de cursos aqui    
+</div>
+
+<div [hidden]="mostrarCursos">Não existem cursos para serem listados.</div>
