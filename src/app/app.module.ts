@@ -15,6 +15,8 @@ import { DiretivaNgswitchComponent } from "./diretiva-ngswitch/diretiva-ngswitch
 import { FundoAmareloDirective } from "./shared/fundo-amarelo.directive";
 import { DiretivasCustomizadasComponent } from "./diretivas-customizadas/diretivas-customizadas.component";
 import { HighlightNouseDirective } from './shared/highlight-nouse.directive';
+import { HighlightDirective } from './shared/highlight.directive';
+import { NgElseDirective } from './shared/ng-else.directive';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { HighlightNouseDirective } from './shared/highlight-nouse.directive';
     DiretivaNgswitchComponent,
     DiretivasCustomizadasComponent,
     FundoAmareloDirective,
-    HighlightNouseDirective
+    HighlightNouseDirective,
+    HighlightDirective,
+    NgElseDirective
   ],
   imports: [
     BrowserModule,
