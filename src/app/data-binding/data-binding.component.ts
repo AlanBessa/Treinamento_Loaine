@@ -32,7 +32,7 @@ export class DataBindingComponent implements OnInit {
   pessoa: any = {
     nome: 'def',
     idade: 19
-  };
+  }
 
   constructor() { }
 

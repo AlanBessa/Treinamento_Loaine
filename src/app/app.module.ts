@@ -1,6 +1,7 @@
 import { CursosModule } from './cursos/cursos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MeuPrimeiroComponent } from './meu-primeiro/meu-primeiro.component';
@@ -13,6 +14,7 @@ import { DiretivaNgifComponent } from "./diretiva-ngif/diretiva-ngif.component";
 import { DiretivaNgswitchComponent } from "./diretiva-ngswitch/diretiva-ngswitch.component";
 import { FundoAmareloDirective } from "./shared/fundo-amarelo.directive";
 import { DiretivasCustomizadasComponent } from "./diretivas-customizadas/diretivas-customizadas.component";
+import { HighlightNouseDirective } from './shared/highlight-nouse.directive';
 
 @NgModule({
   declarations: [
@@ -26,11 +28,14 @@ import { DiretivasCustomizadasComponent } from "./diretivas-customizadas/diretiv
     DiretivaNgifComponent,
     DiretivaNgswitchComponent,
     DiretivasCustomizadasComponent,
-    FundoAmareloDirective
+    FundoAmareloDirective,
+    HighlightNouseDirective
   ],
   imports: [
     BrowserModule,
-    CursosModule
+    CursosModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
