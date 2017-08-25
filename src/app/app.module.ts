@@ -1,3 +1,4 @@
+import { CursosService } from './service/cursos.service';
 import { CursosModule } from './cursos/cursos.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -17,6 +18,7 @@ import { DiretivasCustomizadasComponent } from "./diretivas-customizadas/diretiv
 import { HighlightNouseDirective } from './shared/highlight-nouse.directive';
 import { HighlightDirective } from './shared/highlight.directive';
 import { NgElseDirective } from './shared/ng-else.directive';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { NgElseDirective } from './shared/ng-else.directive';
     FundoAmareloDirective,
     HighlightNouseDirective,
     HighlightDirective,
-    NgElseDirective
+    NgElseDirective,
+    ServiceComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +44,7 @@ import { NgElseDirective } from './shared/ng-else.directive';
     FormsModule, 
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [CursosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
