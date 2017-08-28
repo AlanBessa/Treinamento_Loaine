@@ -1,7 +1,7 @@
 import { CursosService } from './service/cursos.service';
 import { CursosModule } from './cursos/cursos.module';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -21,6 +21,7 @@ import { NgElseDirective } from './shared/ng-else.directive';
 import { ServiceComponent } from './service/service.component';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { CamelCasePipe } from './camel-case.pipe';
+import { SettingsService } from './settings.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,16 @@ import { CamelCasePipe } from './camel-case.pipe';
     FormsModule, 
     ReactiveFormsModule
   ],
-  providers: [CursosService],
+  providers: [
+    CursosService,
+    SettingsService,
+    {
+      provide: LOCALE_ID,
+      deps: [SettingsService],
+      useFactory: (settingsService) => settingsService.getLocale()
+      //useFactory: 'pt-BR'
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
