@@ -19,6 +19,7 @@ import { HighlightNouseDirective } from './shared/highlight-nouse.directive';
 import { HighlightDirective } from './shared/highlight.directive';
 import { NgElseDirective } from './shared/ng-else.directive';
 import { ServiceComponent } from './service/service.component';
+import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ServiceComponent } from './service/service.component';
     HighlightNouseDirective,
     HighlightDirective,
     NgElseDirective,
-    ServiceComponent
+    ServiceComponent,
+    ExemplosPipesComponent
   ],
   imports: [
     BrowserModule,
