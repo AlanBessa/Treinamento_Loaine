@@ -22,6 +22,7 @@ import { ServiceComponent } from './service/service.component';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { CamelCasePipe } from './camel-case.pipe';
 import { SettingsService } from './settings.service';
+import { FiltroArrayPipe } from './filtro-array.pipe';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { SettingsService } from './settings.service';
     NgElseDirective,
     ServiceComponent,
     ExemplosPipesComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    FiltroArrayPipe
   ],
   imports: [
     BrowserModule,
