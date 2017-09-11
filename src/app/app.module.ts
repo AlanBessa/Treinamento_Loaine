@@ -24,6 +24,7 @@ import { CamelCasePipe } from './camel-case.pipe';
 import { SettingsService } from './settings.service';
 import { FiltroArrayPipe } from './filtro-array.pipe';
 import { FiltroArrayImpuroPipe } from './filtro-array-impuro.pipe';
+import { routing } from "./app.routing";
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { FiltroArrayImpuroPipe } from './filtro-array-impuro.pipe';
     BrowserModule,
     CursosModule,
     FormsModule, 
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    routing
   ],
   providers: [
     CursosService,
