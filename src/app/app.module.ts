@@ -25,6 +25,7 @@ import { SettingsService } from './settings.service';
 import { FiltroArrayPipe } from './filtro-array.pipe';
 import { FiltroArrayImpuroPipe } from './filtro-array-impuro.pipe';
 import { routing } from "./app.routing";
+import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { routing } from "./app.routing";
     ExemplosPipesComponent,
     CamelCasePipe,
     FiltroArrayPipe,
-    FiltroArrayImpuroPipe
+    FiltroArrayImpuroPipe,
+    NaoEncontradoComponent
   ],
   imports: [
     BrowserModule,
