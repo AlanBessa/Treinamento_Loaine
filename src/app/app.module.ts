@@ -1,3 +1,4 @@
+import { AppRoutingModule } from './app.routing.module';
 import { CursosService } from './service/cursos.service';
 import { CursosModule } from './cursos/cursos.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,7 +25,7 @@ import { CamelCasePipe } from './camel-case.pipe';
 import { SettingsService } from './settings.service';
 import { FiltroArrayPipe } from './filtro-array.pipe';
 import { FiltroArrayImpuroPipe } from './filtro-array-impuro.pipe';
-import { routing } from "./app.routing";
+//import { routing } from "./app.routing";
 import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.component';
 
 @NgModule({
@@ -55,7 +56,8 @@ import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.componen
     CursosModule,
     FormsModule, 
     ReactiveFormsModule,
-    routing
+    AppRoutingModule
+    //routing
   ],
   providers: [
     CursosService,
