@@ -8,11 +8,11 @@ import { MaterializeModule } from 'angular2-materialize';
 import { AppRoutingModule } from "./app.routing.module";
 
 import { AuthService } from "./login/auth.service";
+import { AuthGuard } from "./guards/auth.guard";
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })
