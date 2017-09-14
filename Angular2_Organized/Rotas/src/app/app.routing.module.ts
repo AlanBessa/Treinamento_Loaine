@@ -2,7 +2,8 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 const appRoutes: Routes = [
-
+    {path: 'cursos', loadChildren: 'app/cursos/cursos.module#CursosModule'},
+    {path: 'alunos', loadChildren: 'app/alunos/alunos.module#AlunosModule'}
 ];
 
 @NgModule({
