@@ -40,3 +40,5 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+Angular2_Organized/Rotas/node_modules/
+Angular2_Unorganized/node_modules/
