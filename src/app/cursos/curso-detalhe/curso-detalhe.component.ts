@@ -17,7 +17,7 @@ export class CursoDetalheComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, 
               private router: Router, 
-              private cursosService: CursosService) 
+              private cursosService: CursosService)  
   { 
     //this.id = this.route.snapshot.params['id'];
   }
