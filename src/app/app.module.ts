@@ -5,6 +5,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { AlunosModule } from './alunos/alunos.module';
+
 import { AppComponent } from './app.component';
 import { MeuPrimeiroComponent } from './meu-primeiro/meu-primeiro.component';
 import { MeuSegundoComponent } from './meu-segundo/meu-segundo.component';
@@ -12,6 +14,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { InputPropertyComponent } from './input-property/input-property.component';
 import { OutputPropertyComponent } from './output-property/output-property.component';
 import { CicloComponent } from './ciclo/ciclo.component';
+
 import { DiretivaNgifComponent } from "./diretiva-ngif/diretiva-ngif.component";
 import { DiretivaNgswitchComponent } from "./diretiva-ngswitch/diretiva-ngswitch.component";
 import { FundoAmareloDirective } from "./shared/fundo-amarelo.directive";
@@ -54,6 +57,7 @@ import { NaoEncontradoComponent } from './nao-encontrado/nao-encontrado.componen
   imports: [
     BrowserModule,
     CursosModule,
+    AlunosModule,
     FormsModule, 
     ReactiveFormsModule,
     AppRoutingModule
