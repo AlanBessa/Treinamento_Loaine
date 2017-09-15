@@ -15,12 +15,14 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CursosGuard } from "./guards/cursos.guard";
 import { AlunosGuard } from "./guards/alunos.guard";
+import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    PaginaNaoEncontradaComponent
   ],
   imports: [
     BrowserModule,
