@@ -49,3 +49,8 @@
 }
 
 /* Extra large devices (large desktops) */
+
+/* PADDINGS */
+.p-15 {
+    padding: 15px;
+}
