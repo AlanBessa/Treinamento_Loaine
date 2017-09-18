@@ -1,4 +1,3 @@
-import { Usuario } from './../../../../Rotas/src/app/login/usuario';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./template-form.component.css']
 })
 export class TemplateFormComponent implements OnInit {
+
+  public retornaValidacao: boolean = false;
 
   usuario: any = {
     nome: 'Loiane',
@@ -26,9 +27,17 @@ export class TemplateFormComponent implements OnInit {
   }
 
   public onSubmit(form): void {
-    console.log(form.value);
+    console.log(form);
+
+    if(!form.valid) {
+      this.retornaValidacao = true;
+    }
 
     console.log(this.usuario);
+  }
+
+  public aplicaErro(campo): boolean {
+    return !campo.valid && campo.touched;
   }
 
 }
