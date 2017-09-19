@@ -7,17 +7,17 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { DataFormComponent } from './data-form/data-form.component';
+import { DataFormModule } from './data-form/data-form.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DataFormComponent    
+    AppComponent  
   ],
   imports: [
     BrowserModule,
     FormsModule,
     TemplateFormModule,
+    DataFormModule,
     AppRoutingModule, 
     BsDropdownModule.forRoot()
   ],
