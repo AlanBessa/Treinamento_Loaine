@@ -29,13 +29,17 @@ export class TemplateFormComponent implements OnInit {
   }
 
   public onSubmit(form): void {
-    console.log(form);
 
     if(!form.valid) {
       this.retornaValidacao = true;
+      return;
     }
 
-    console.log(this.usuario);
+    console.log(form);
+
+    this.http.post('enderecaoServer/formUsuario', JSON.stringify(form.value))
+        .map(response => response)
+        .subscribe(dados => console.log(dados));
   }
 
   public aplicaErro(campo): boolean {
