@@ -37,9 +37,13 @@ export class TemplateFormComponent implements OnInit {
 
     console.log(form);
 
-    this.http.post('enderecaoServer/formUsuario', JSON.stringify(form.value))
+    this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
         .map(response => response)
-        .subscribe(dados => console.log(dados));
+        .subscribe(dados => {
+          console.log(dados);
+          form.form.reset();
+        }        
+    );
   }
 
   public aplicaErro(campo): boolean {
