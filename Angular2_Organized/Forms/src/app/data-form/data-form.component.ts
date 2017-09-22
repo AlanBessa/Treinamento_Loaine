@@ -44,4 +44,20 @@ export class DataFormComponent implements OnInit {
   public resetar():void {
     this.formulario.reset();
   }
+
+  public aplicaErro(campo): boolean {
+    return !this.formulario.get(campo).valid && this.formulario.get(campo).touched;
+  }
+
+  public aplicaTocado(campo): boolean {
+    return this.formulario.get(campo).touched;
+  }
+
+  verificaEmailInvalido() {
+    let campoEmail = this.formulario.get('email');
+
+    if(campoEmail.errors) {
+      return campoEmail.errors['email'] && campoEmail.touched;
+    }
+  }
 }

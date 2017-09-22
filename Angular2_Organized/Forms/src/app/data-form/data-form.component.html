@@ -5,7 +5,9 @@
         <div class="col-12">
           <label for="nome">Nome</label>
           <input type="text" class="form-control" id="nome" placeholder="Nome"
+            [ngClass]="{'is-invalid': aplicaErro('nome'), 'is-valid': !aplicaErro('nome') && aplicaTocado('nome')}"
             formControlName="nome" />
+          <app-input-texto [condicao]="aplicaErro('nome')" mensagem="Nome é obrigatório"></app-input-texto>
         </div>
       </div>
 
@@ -13,7 +15,10 @@
         <div class="col-12">
           <label for="email">E-mail</label>
           <input type="email" class="form-control" id="email" placeholder="nome@email.com"
+          [ngClass]="{'is-invalid': aplicaErro('email'), 'is-valid': !aplicaErro('email') && formulario.get('email').touched}"
             formControlName="email" />
+            <!-- verificar no tutorial do baltieri -->
+          <app-input-texto [condicao]="verificaEmailInvalido()" mensagem="E-mail é obrigatório"></app-input-texto>
         </div>
       </div>
       <!--
