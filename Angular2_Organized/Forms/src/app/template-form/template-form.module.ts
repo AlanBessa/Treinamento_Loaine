@@ -4,19 +4,17 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from "@angular/forms";
 
 import { TemplateFormComponent } from "./template-form.component";
-import { FormDebugComponent } from "../form-debug/form-debug.component";
-import { InputTextoComponent } from './input-texto/input-texto.component';
+import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SharedModule
   ],
   declarations: [
-    TemplateFormComponent,
-    FormDebugComponent,
-    InputTextoComponent
+    TemplateFormComponent
   ]
 })
 export class TemplateFormModule { }
