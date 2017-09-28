@@ -19,12 +19,19 @@ export class DataFormComponent implements OnInit {
   ngOnInit() {
     /*this.formulario = new FormGroup({
       nome: new FormControl(null),
-      email: new FormControl(null)
+      email: new FormControl(null) 
     });*/
 
     this.formulario = this.formBuilder.group({
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-      email: [null, [Validators.required, Validators.email]]
+      email: [null, [Validators.required, Validators.email]],
+      cep: [null, Validators.required],
+      numero: [null, Validators.required],
+      complemento: [null],
+      rua: [null, Validators.required],
+      bairro: [null, Validators.required],
+      cidade: [null, Validators.required],
+      estado: [null, Validators.required]
     })
   }
 
@@ -45,11 +52,11 @@ export class DataFormComponent implements OnInit {
     this.formulario.reset();
   }
 
-  public aplicaErro(campo): boolean {
+  public aplicaErro(campo: string): boolean {
     return !this.formulario.get(campo).valid && this.formulario.get(campo).touched;
   }
 
-  public aplicaTocado(campo): boolean {
+  public aplicaTocado(campo: string): boolean {
     return this.formulario.get(campo).touched;
   }
 
