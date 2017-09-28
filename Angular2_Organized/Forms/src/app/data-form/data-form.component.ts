@@ -9,7 +9,9 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 })
 export class DataFormComponent implements OnInit {
 
-  formulario: FormGroup;
+  public formulario: FormGroup;
+
+  public retornaValidacao: boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -37,7 +39,16 @@ export class DataFormComponent implements OnInit {
     })
   }
 
-  public onSubmit(): void {
+  public onSubmit(): void 
+  {
+    if(!this.formulario.valid) 
+    {
+      this.retornaValidacao = true;
+      this.verificaValidacoesForm(this.formulario);
+
+      return;
+    }
+
     this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
       .map(response => response)
       .subscribe(dados => {
@@ -50,12 +61,23 @@ export class DataFormComponent implements OnInit {
       );
   }
 
+  private verificaValidacoesForm(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach(campo => {
+      const controle = formGroup.get(campo);
+      controle.markAsDirty();
+
+      if(controle instanceof FormGroup) {
+        this.verificaValidacoesForm(controle);
+      }
+    });
+  }
+
   public resetar(): void {
     this.formulario.reset();
   }
 
   public aplicaErro(campo: string): boolean {
-    return !this.formulario.get(campo).valid && this.formulario.get(campo).touched;
+    return !this.formulario.get(campo).valid && this.formulario.get(campo).touched || this.formulario.get(campo).dirty);
   }
 
   public aplicaTocado(campo: string): boolean {
