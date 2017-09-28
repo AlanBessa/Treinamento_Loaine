@@ -25,7 +25,7 @@
         <div class="form-group form-row">
           <div class="col-3">
             <label for="cep">CEP</label>
-            <input type="text" class="form-control" id="cep" formControlName="cep" [ngClass]="{'is-invalid': aplicaErro('endereco.cep'), 'is-valid': !aplicaErro('endereco.cep') && aplicaTocado('endereco.cep')}" /> <!--(blur)="consultaCEP($event.target.value, f)">-->
+            <input type="text" class="form-control" id="cep" formControlName="cep" [ngClass]="{'is-invalid': aplicaErro('endereco.cep'), 'is-valid': !aplicaErro('endereco.cep') && aplicaTocado('endereco.cep')}" (blur)="consultaCEP()" />
             <app-input-texto [condicao]="aplicaErro('endereco.cep')" mensagem="CEP é obrigatório"></app-input-texto>
           </div>
           <div class="col-3">
