@@ -21,17 +21,17 @@
           <app-input-texto [condicao]="verificaEmailInvalido()" mensagem="E-mail é obrigatório"></app-input-texto>
         </div>
       </div>
-      <div>
+      <div formGroupName="endereco">
         <div class="form-group form-row">
           <div class="col-3">
             <label for="cep">CEP</label>
-            <input type="text" class="form-control" id="cep" formControlName="cep" [ngClass]="{'is-invalid': aplicaErro('cep'), 'is-valid': !aplicaErro('cep') && aplicaTocado('cep')}" /> <!--(blur)="consultaCEP($event.target.value, f)">-->
-            <app-input-texto [condicao]="aplicaErro('cep')" mensagem="CEP é obrigatório"></app-input-texto>
+            <input type="text" class="form-control" id="cep" formControlName="cep" [ngClass]="{'is-invalid': aplicaErro('endereco.cep'), 'is-valid': !aplicaErro('endereco.cep') && aplicaTocado('endereco.cep')}" /> <!--(blur)="consultaCEP($event.target.value, f)">-->
+            <app-input-texto [condicao]="aplicaErro('endereco.cep')" mensagem="CEP é obrigatório"></app-input-texto>
           </div>
           <div class="col-3">
             <label for="numero">Número</label>
-            <input type="text" class="form-control" id="numero" formControlName="numero" [ngClass]="{'is-invalid': aplicaErro('numero'), 'is-valid': !aplicaErro('numero') && aplicaTocado('numero')}" />
-            <app-input-texto [condicao]="aplicaErro('numero')" mensagem="Número é obrigatório"></app-input-texto>
+            <input type="text" class="form-control" id="numero" formControlName="numero" [ngClass]="{'is-invalid': aplicaErro('endereco.numero'), 'is-valid': !aplicaErro('endereco.numero') && aplicaTocado('endereco.numero')}" />
+            <app-input-texto [condicao]="aplicaErro('endereco.numero')" mensagem="Número é obrigatório"></app-input-texto>
           </div>
           <div class="col-6">
             <label for="complemento">Complemento</label>
@@ -42,26 +42,26 @@
         <div class="form-group form-row">
           <div class="col-12">
             <label for="rua">Rua</label>
-            <input type="text" class="form-control" id="rua" formControlName="rua" [ngClass]="{'is-invalid': aplicaErro('rua'), 'is-valid': !aplicaErro('rua') && aplicaTocado('rua')}" />
-            <app-input-texto [condicao]="aplicaErro('rua')" mensagem="Rua é obrigatório"></app-input-texto>
+            <input type="text" class="form-control" id="rua" formControlName="rua" [ngClass]="{'is-invalid': aplicaErro('endereco.rua'), 'is-valid': !aplicaErro('endereco.rua') && aplicaTocado('endereco.rua')}" />
+            <app-input-texto [condicao]="aplicaErro('endereco.rua')" mensagem="Rua é obrigatório"></app-input-texto>
           </div>
         </div>
 
         <div class="form-group form-row">
           <div class="col-3">
             <label for="bairro">Bairro</label>
-            <input type="text" class="form-control" id="bairro" formControlName="bairro" [ngClass]="{'is-invalid': aplicaErro('bairro'), 'is-valid': !aplicaErro('bairro') && aplicaTocado('bairro')}" />
-            <app-input-texto [condicao]="aplicaErro('bairro')" mensagem="Bairro é obrigatório"></app-input-texto>
+            <input type="text" class="form-control" id="bairro" formControlName="bairro" [ngClass]="{'is-invalid': aplicaErro('endereco.bairro'), 'is-valid': !aplicaErro('endereco.bairro') && aplicaTocado('endereco.bairro')}" />
+            <app-input-texto [condicao]="aplicaErro('endereco.bairro')" mensagem="Bairro é obrigatório"></app-input-texto>
           </div>
           <div class="col-3">
             <label for="cidade">Cidade</label>
-            <input type="text" class="form-control" id="cidade" formControlName="cidade" [ngClass]="{'is-invalid': aplicaErro('cidade'), 'is-valid': !aplicaErro('cidade') && aplicaTocado('cidade')}" />
-            <app-input-texto [condicao]="aplicaErro('cidade')" mensagem="Cidade é obrigatório"></app-input-texto>
+            <input type="text" class="form-control" id="cidade" formControlName="cidade" [ngClass]="{'is-invalid': aplicaErro('endereco.cidade'), 'is-valid': !aplicaErro('endereco.cidade') && aplicaTocado('endereco.cidade')}" />
+            <app-input-texto [condicao]="aplicaErro('endereco.cidade')" mensagem="Cidade é obrigatório"></app-input-texto>
           </div>
           <div class="col-6">
             <label for="estado">Estado</label>
-            <input type="text" class="form-control" id="estado" formControlName="estado" [ngClass]="{'is-invalid': aplicaErro('estado'), 'is-valid': !aplicaErro('estado') && aplicaTocado('estado')}" />
-            <app-input-texto [condicao]="aplicaErro('estado')" mensagem="Estado é obrigatório"></app-input-texto>
+            <input type="text" class="form-control" id="estado" formControlName="estado" [ngClass]="{'is-invalid': aplicaErro('endereco.estado'), 'is-valid': !aplicaErro('endereco.estado') && aplicaTocado('endereco.estado')}" />
+            <app-input-texto [condicao]="aplicaErro('endereco.estado')" mensagem="Estado é obrigatório"></app-input-texto>
           </div>
         </div>
       </div>

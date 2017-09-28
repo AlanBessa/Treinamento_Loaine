@@ -25,30 +25,32 @@ export class DataFormComponent implements OnInit {
     this.formulario = this.formBuilder.group({
       nome: [null, [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       email: [null, [Validators.required, Validators.email]],
-      cep: [null, Validators.required],
-      numero: [null, Validators.required],
-      complemento: [null],
-      rua: [null, Validators.required],
-      bairro: [null, Validators.required],
-      cidade: [null, Validators.required],
-      estado: [null, Validators.required]
+      endereco: this.formBuilder.group({
+        cep: [null, Validators.required],
+        numero: [null, Validators.required],
+        complemento: [null],
+        rua: [null, Validators.required],
+        bairro: [null, Validators.required],
+        cidade: [null, Validators.required],
+        estado: [null, Validators.required]
+      })
     })
   }
 
-  public onSubmit():void {
+  public onSubmit(): void {
     this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
-        .map(response => response)
-        .subscribe(dados => {
-          console.log(dados);
+      .map(response => response)
+      .subscribe(dados => {
+        console.log(dados);
 
-          //reseta form
-          this.resetar();
-        }, 
-        (error: any) => alert('erro')
+        //reseta form
+        this.resetar();
+      },
+      (error: any) => alert('erro')
       );
-  } 
+  }
 
-  public resetar():void {
+  public resetar(): void {
     this.formulario.reset();
   }
 
@@ -63,7 +65,7 @@ export class DataFormComponent implements OnInit {
   verificaEmailInvalido() {
     let campoEmail = this.formulario.get('email');
 
-    if(campoEmail.errors) {
+    if (campoEmail.errors) {
       return campoEmail.errors['email'] && campoEmail.touched;
     }
   }
